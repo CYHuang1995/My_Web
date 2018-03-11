@@ -1,4 +1,4 @@
-"""Django_Web_test URL Configuration
+"""zqxt URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,12 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from learn import views as learn_views
 
 urlpatterns = [
-    path('',learn_views.index,name='home'),
-    path('add/', learn_views.add, name='add'),
-    path('add/<int:a>/<int:b>/', learn_views.add2, name='add2'),
     path('admin/', admin.site.urls),
 ]
-

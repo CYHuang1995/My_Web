@@ -1,4 +1,4 @@
-"""Django_Web_test URL Configuration
+"""My_Blog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from learn import views as learn_views
+from django.urls import path, include
+import blog.urls
+import blog2.urls
+
 
 urlpatterns = [
-    path('',learn_views.index,name='home'),
-    path('add/', learn_views.add, name='add'),
-    path('add/<int:a>/<int:b>/', learn_views.add2, name='add2'),
     path('admin/', admin.site.urls),
+    path('blog/', include(('blog.urls', 'blog'))),
+    path('blog2/', include('blog2.urls')),
 ]
 
